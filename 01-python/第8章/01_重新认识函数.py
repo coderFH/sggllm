@@ -74,6 +74,6 @@ def welcome():
     return show_msg
 
 # result = welcome()
-# result('尚硅谷')
-welcome()('尚硅谷')
+# result('北京')
+welcome()('北京')
 

@@ -8,12 +8,12 @@ from langgraph.graph import StateGraph, START, END
 
 
 # 定义状态
-class AtguiguState(TypedDict):
+class HomeState(TypedDict):
     value: int
     step: str
 
 # 定义节点函数
-def node_a(state: AtguiguState) -> dict:
+def node_a(state: HomeState) -> dict:
     """节点A"""
     print("执行节点A")
     print("state[value]:"+str(state["value"]))
@@ -21,7 +21,7 @@ def node_a(state: AtguiguState) -> dict:
     return {"value": state["value"] + 1, "step": "A执行完毕"}
 
 
-def node_b(state: AtguiguState) -> dict:
+def node_b(state: HomeState) -> dict:
     """节点B"""
     print("执行节点B")
     return {"value": state["value"] * 2, "step": "B执行完毕"}
@@ -32,7 +32,7 @@ def main():
     print("=== 入口点演示 ===")
 
     # 创建图
-    builder = StateGraph(AtguiguState)
+    builder = StateGraph(HomeState)
 
     # 添加节点
     builder.add_node("node_a", node_a)

@@ -4,7 +4,7 @@ from typing import TypedDict, List, Annotated
 
 
 # 定义状态
-class AtguiguState(TypedDict):
+class HomeState(TypedDict):
     x: int
 
 def addition1(state):
@@ -26,7 +26,7 @@ def addition3(state):
     print(f'加法节点addition3收到的初始值:{state}')
     return {"x": state["x"] + 3}
 
-def route_by_sentiment(state: AtguiguState) -> str:
+def route_by_sentiment(state: HomeState) -> str:
     # 路由逻辑...返回最终的条件
     flag = state["x"]
     if flag == 1:
@@ -36,7 +36,7 @@ def route_by_sentiment(state: AtguiguState) -> str:
     else:
         return "condition_3"
 
-graph = StateGraph(AtguiguState)
+graph = StateGraph(HomeState)
 graph.add_node("node1", addition1)
 graph.add_node("node2", addition2)
 graph.add_node("node3", addition3)

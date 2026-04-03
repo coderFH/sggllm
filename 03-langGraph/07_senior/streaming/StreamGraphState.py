@@ -11,21 +11,21 @@ from typing import TypedDict
 from langgraph.graph import StateGraph, START, END
 
 
-class AtguiguState(TypedDict):
+class HomeState(TypedDict):
   topic: str
   joke: str
 
 
-def refine_topic(state: AtguiguState):
+def refine_topic(state: HomeState):
     return {"topic": state["topic"] + " and cats"}
 
 
-def generate_joke(state: AtguiguState):
+def generate_joke(state: HomeState):
     return {"joke": f"This is a joke about {state['topic']}"}
 
 def main():
     graph = (
-      StateGraph(AtguiguState)
+      StateGraph(HomeState)
       .add_node(refine_topic)
       .add_node(generate_joke)
 

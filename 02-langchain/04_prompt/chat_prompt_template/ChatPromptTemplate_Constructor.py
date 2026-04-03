@@ -21,7 +21,7 @@ chatPromptTemplate = ChatPromptTemplate(
 )
 
 prompt = chatPromptTemplate.format_messages(
-    name="小谷AI", thing="AI", user_input="7 + 5等于多少")
+    name="小芬AI", thing="AI", user_input="7 + 5等于多少")
 print(prompt)
 
 llm = init_chat_model(

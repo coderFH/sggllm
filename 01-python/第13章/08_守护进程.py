@@ -44,7 +44,7 @@ if __name__ == '__main__':
     # 向文件中写入数据
     with open('log.txt', 'a', encoding='utf-8') as file:
         for index in range(10):
-            file.write(f'尚硅谷{index}\n')
+            file.write(f'北京{index}\n')
             file.flush()
             time.sleep(1)
 

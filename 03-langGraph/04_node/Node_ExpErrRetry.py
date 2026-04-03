@@ -12,7 +12,7 @@ from langgraph.types import RetryPolicy
 
 
 # 定义状态类型
-class AtguiguState(TypedDict):
+class HomeState(TypedDict):
     result: str
 
 # 全局计数器：记录API尝试次数
@@ -21,7 +21,7 @@ attempt_counter = 0
 
 # 工具函数
 def build_retry_graph(node_name: str, node_func, retry_policy: RetryPolicy):
-    builder = StateGraph(AtguiguState)
+    builder = StateGraph(HomeState)
     #为节点添加重试策略，需要在add_node中设置retry_policy参数。
     # retry_policy参数接受一个RetryPolicy命名元组对象。
     # 默认情况下，retry_on参数使用default_retry_on函数，该函数会在遇到任何异常时重试
@@ -32,7 +32,7 @@ def build_retry_graph(node_name: str, node_func, retry_policy: RetryPolicy):
 
 
 # 模拟不稳定的API调用，使用全局变量跟踪尝试次数
-def unstable_api_call(state: AtguiguState) -> Dict[str, Any]:
+def unstable_api_call(state: HomeState) -> Dict[str, Any]:
     """模拟不稳定API：前2次失败，第3次成功（全局计数器记录尝试次数）"""
     global attempt_counter
     attempt_counter += 1
@@ -56,7 +56,7 @@ def custom_retry_on(exception: Exception) -> bool:
     return False
 
 # 模拟抛出 ValueError 的节点
-def value_error_call(state: AtguiguState) -> Dict[str, Any]:
+def value_error_call(state: HomeState) -> Dict[str, Any]:
     """模拟抛出ValueError：默认重试策略对这类异常不重试"""
     print("调用会抛出 ValueError 的节点")
     raise ValueError("模拟 ValueError 异常")

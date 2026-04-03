@@ -22,7 +22,7 @@ def node(state: State):
     # Get the stream writer to send custom data
     writer = get_stream_writer()
     # Emit a custom key-value pair (e.g., progress update)
-    writer({"custom_key": "欢迎来到尚硅谷线上Agent班级学习，O(∩_∩)O"})
+    writer({"custom_key": "欢迎来到北京线上Agent班级学习，O(∩_∩)O"})
     return {"answer": "some data"}
 
 graph = (

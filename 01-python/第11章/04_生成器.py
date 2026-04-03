@@ -30,7 +30,7 @@
 #     yield '我是第2个yield所返回的数据'
 #     b = 300
 #     print(b)
-#     return '尚硅谷'
+#     return '北京'
 #
 # d = demo()
 # r1 = next(d)
@@ -54,7 +54,7 @@
 #     yield '我是第2个yield所返回的数据'
 #     b = 300
 #     print(b)
-#     return '尚硅谷'
+#     return '北京'
 #
 # d = demo()
 # 验证：生成器对象d，和迭代器一样，也拥有：__iter__  和 __next__ 方法
@@ -135,7 +135,7 @@
 #     print(a)
 #     b = yield '我是第2个yield所返回的数据'
 #     print(b)
-#     return '尚硅谷'
+#     return '北京'
 #
 # d = demo()
 # r1 = d.send(None)

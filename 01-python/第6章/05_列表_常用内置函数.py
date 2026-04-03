@@ -6,11 +6,11 @@
 # print(result)
 
 # 1.2 若列容器中的元素：既有数字，又有字符串，那就会报错。
-# nums = [23, 11, 32, 30, 17, '尚硅谷']
+# nums = [23, 11, 32, 30, 17, '北京']
 # sorted(nums)
 
 # 1.3 若列容器中的元素：都是字符串，则按照字符串的 Unicode 编码大小进行排序。
-# msg_list = ['北京', '尚硅谷', '你好']
+# msg_list = ['北京', '北京', '你好']
 # result = sorted(msg_list)
 # print(msg_list)
 # print(result)
@@ -29,11 +29,11 @@
 # print(result)
 
 # 3.2 如果容器中的元素：既有数字又有字符串，那 max 会报错。
-# nums = [23, 11, 32, 30, 17, '尚硅谷']
+# nums = [23, 11, 32, 30, 17, '北京']
 # max(nums)
 
 # 3.3 如果容器中的元素：都是字符串，那 max 会返回：Unicode 编码最大的字符。
-# msg_list = ['北京', '尚硅谷', '你好']
+# msg_list = ['北京', '北京', '你好']
 # result = max(msg_list)
 # print(msg_list)
 # print(result)

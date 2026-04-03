@@ -13,7 +13,7 @@ def check_school_name(name):
         print('学校名是合法的')
 
 try:
-    check_school_name('atguiguuuuuuuuuuuuuuu')
+    check_school_name('henryuuuuuuuuuuuuuu')
 except SchoolNameError as e:
     print(f'程序异常：{e}')
 

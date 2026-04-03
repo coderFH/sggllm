@@ -19,13 +19,13 @@ from langgraph.types import Send
 
 
 # 定义状态
-class AtguiguState(TypedDict):
+class HomeState(TypedDict):
     subjects: List[str]
     jokes: Annotated[List[str], lambda x, y: x + y]  # 使用列表合并的方式
 
 
 # 第一个节点：生成需要处理的主题列表
-def generate_subjects(state: AtguiguState) -> dict:
+def generate_subjects(state: HomeState) -> dict:
     """生成需要处理的主题列表"""
     print("执行节点(第一个节点：生成需要处理的主题列表): generate_subjects")
     subjects = ["猫", "狗", "程序员"]
@@ -34,7 +34,7 @@ def generate_subjects(state: AtguiguState) -> dict:
 
 
 # Map节点：为每个主题生成笑话
-def make_joke(state: AtguiguState) -> dict:
+def make_joke(state: HomeState) -> dict:
     """为单个主题生成笑话"""
     subject = state.get("subject", "未知")
     print(f"执行节点: make_joke，处理主题: {subject}")
@@ -53,7 +53,7 @@ def make_joke(state: AtguiguState) -> dict:
 
 
 # 条件边函数：根据主题列表生成Send对象列表
-def map_subjects_to_jokes(state: AtguiguState) -> List[Send]:
+def map_subjects_to_jokes(state: HomeState) -> List[Send]:
     """将主题列表映射到joke生成任务"""
     print("执行条件边函数: map_subjects_to_jokes")
     subjects = state["subjects"]
@@ -71,7 +71,7 @@ def main():
     print("=== Map-Reduce 模式演示 ===\n")
 
     # 创建图
-    builder = StateGraph(AtguiguState)
+    builder = StateGraph(HomeState)
 
     # 添加节点
     builder.add_node("generate_subjects", generate_subjects)

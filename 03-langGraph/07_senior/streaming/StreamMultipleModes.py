@@ -8,14 +8,14 @@ from langgraph.graph import StateGraph, START, END
 
 
 # 定义状态类型
-class AtguiguState(TypedDict):
+class HomeState(TypedDict):
     question: str
     answer: str
     confidence: float # 置信度分数
     steps: list
 
 
-def think(state: AtguiguState) -> AtguiguState:
+def think(state: HomeState) -> HomeState:
     """思考节点"""
     question = state["question"]
     # 模拟思考过程
@@ -23,7 +23,7 @@ def think(state: AtguiguState) -> AtguiguState:
     return {"steps": steps}
 
 
-def respond(state: AtguiguState) -> AtguiguState:
+def respond(state: HomeState) -> HomeState:
     """回应节点"""
     question = state["question"]
     # 根据问题生成答案
@@ -43,7 +43,7 @@ def respond(state: AtguiguState) -> AtguiguState:
     }
 
 
-def reflect(state: AtguiguState) -> AtguiguState:
+def reflect(state: HomeState) -> HomeState:
     """反思节点"""
     answer = state["answer"]
     confidence = state["confidence"]
@@ -66,7 +66,7 @@ def reflect(state: AtguiguState) -> AtguiguState:
 
 def main():
     # 构建图
-    builder = StateGraph(AtguiguState)
+    builder = StateGraph(HomeState)
     builder.add_node("think", think)
     builder.add_node("respond", respond)
     builder.add_node("reflect", reflect)

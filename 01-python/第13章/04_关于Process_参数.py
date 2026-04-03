@@ -21,7 +21,7 @@ if __name__ == '__main__':
     #   🔸args：  给 target 传的位置参数（元组）
     #   🔸kwargs：给 target 传的关键字参数（字典）。
     #   🔸daemon：标记进程是否为守护进程，取值为布尔值（默认为 None，表示从创建方进程继承）。
-    p1 = Process(target=speak, name='说话进程', args=(666, 888), kwargs={'msg':'尚硅谷'})
+    p1 = Process(target=speak, name='说话进程', args=(666, 888), kwargs={'msg':'北京'})
     p2 = Process(target=study)
     # print(p1.name)
     # print(p2.name)

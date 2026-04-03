@@ -13,7 +13,7 @@ def test2(**kwargs):
 test2(name='张三', gender='男', age=18, height=172)
 
 # 定义函数（同时使用：可变位置参数、可变关键字参数）
-def test3(a, b, *args, c='尚硅谷', **kwargs):
+def test3(a, b, *args, c='北京', **kwargs):
     print('@@@@@@@@@@@@@@@@')
     print(a)
     print(b)

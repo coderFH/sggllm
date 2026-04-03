@@ -17,7 +17,7 @@ from langgraph.constants import END
 from langgraph.graph import StateGraph, MessagesState, START
 import operator
 
-class AtguiguState(TypedDict):
+class HomeState(TypedDict):
     """
     定义状态类，用于存储图节点间传递的消息状态
     messages: 使用add函数合并的字符串列表消息
@@ -25,14 +25,14 @@ class AtguiguState(TypedDict):
     """
     messages: Annotated[list[str], add]
 
-def sub_node(state:AtguiguState) -> AtguiguState:
+def sub_node(state:HomeState) -> HomeState:
     # 子图节点处理函数，接收当前状态并返回响应消息
     # @param state 当前状态对象，包含消息列表
     # @return 包含子图响应消息的新状态
     return {"messages": ["response from subgraph"]}
 
 # 创建子图构建器并配置节点和边
-subgraph_builder = StateGraph(AtguiguState)
+subgraph_builder = StateGraph(HomeState)
 subgraph_builder.add_node("sub_node", sub_node)
 
 subgraph_builder.add_edge(START, "sub_node")
@@ -40,7 +40,7 @@ subgraph_builder.add_edge("sub_node", END)
 subgraph = subgraph_builder.compile()
 
 # 创建主图构建器并添加子图节点
-builder = StateGraph(AtguiguState)
+builder = StateGraph(HomeState)
 builder.add_node("subgraph_node", subgraph)
 builder.add_edge(START, "subgraph_node")
 builder.add_edge("subgraph_node", END)

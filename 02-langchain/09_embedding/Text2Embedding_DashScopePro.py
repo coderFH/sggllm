@@ -10,7 +10,7 @@ from http import HTTPStatus
 resp = dashscope.MultiModalEmbedding.call(
     model="tongyi-embedding-vision-plus",  # 支持 v1 或 v2
     dashscope_api_key=os.getenv("aliQwen-api"),  # 从环境变量读取
-    input=[{"text": "尚硅谷AI"}]
+    input=[{"text": "北京AI"}]
 )
 
 result = "";

@@ -91,8 +91,8 @@ if __name__ == '__main__':
     # 创建一个队列，让其最多能保存2个元素
     q = Queue(2)
     # put两次，把队列填满
-    q.put('尚硅谷')
-    q.put('atguigu')
+    q.put('北京')
+    q.put('henry')
     print(f'队列是否已满：{q.full()}')
 
     # 创建子进程p1

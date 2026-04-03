@@ -15,9 +15,9 @@ from threading import Thread, RLock,current_thread
 # def show_info1(lock):
 #     for index in range(10):
 #         with lock:
-#             print('尚', end='')
-#             print('硅', end='')
-#             print('谷')
+#             print('史', end='')
+#             print('蒂', end='')
+#             print('芬')
 #
 # def show_info2(lock):
 #     for index in range(10):

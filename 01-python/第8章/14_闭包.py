@@ -112,11 +112,11 @@
 #
 # show1 = beauty('*', 3)
 # show1('你好啊')
-# show1('尚硅谷')
+# show1('北京')
 #
 # show2 = beauty('@', 5)
 # show2('你好啊')
-# show2('尚硅谷')
+# show2('北京')
 
 # 闭包的缺点：
 # 1. 理解成本较高：对初学者不太友好，滥用会让代码难读。
@@ -132,8 +132,8 @@
 #
 # b1 = Beauty('*', 3)
 # b1.show_msg('你好啊')
-# b1.show_msg('尚硅谷')
+# b1.show_msg('北京')
 #
 # b2 = Beauty('#', 5)
 # b2.show_msg('你好啊')
-# b2.show_msg('尚硅谷')
+# b2.show_msg('北京')

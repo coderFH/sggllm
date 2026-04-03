@@ -27,7 +27,7 @@
 # 第一步：创建『文件对象』
 # file = open(file='a.txt', mode='rt', encoding='utf-8')
 # file = open('a.txt', 'rt', encoding='utf-8')
-# file = open('D:/test/atguigu.txt', 'rt', encoding='utf-8')
+# file = open('D:/test/henry.txt', 'rt', encoding='utf-8')
 # file = open('D:/test/girl.jpg', 'rb')
 
 # 第二步：操作文件（读取）

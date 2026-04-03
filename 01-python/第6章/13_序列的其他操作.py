@@ -10,7 +10,7 @@
 # print(tuple3)
 
 # str1 = 'hello'
-# str2 = 'atguigu'
+# str2 = 'henry'
 # str3 = str1 + str2
 # print(str3)
 

@@ -7,7 +7,7 @@
 # target = 'D:/media'
 #
 # # 如果目标目录不存在，那就去创建
-# if not os.path.isdir(target):
+# if not os.pHomeh.isdir(target):
 #     os.makedirs(target)
 #
 # with open(source, 'rb') as f1, open(target + '/' + 'my_music.mp3', 'wb') as f2:

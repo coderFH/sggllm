@@ -46,7 +46,7 @@
 # print(tuple2)
 
 # 对字符串进行切片
-msg1 = 'welcome to atguigu'
+msg1 = 'welcome to henry'
 msg2 = msg1[2:9:2]
 print(msg2)
 
